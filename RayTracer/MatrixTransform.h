@@ -12,7 +12,7 @@ namespace mtr {
 	};
 
 	template<int_or_float T = float>
-	Matrix4<T> Traslate(const Vector& v) {
+	Matrix4<T> Traslate(const Vector<T>& v) {
 		Matrix4<T> m{ 1 };
 
 		m(0, 3) = v.x;
@@ -23,7 +23,7 @@ namespace mtr {
 	}
 
 	template<int_or_float T = float>
-	Matrix4<T> Scale(const Vector& v) {
+	Matrix4<T> Scale(const Vector<T>& v) {
 		Matrix4<T> m{ 1 };
 
 		m(0, 0) = v.x;

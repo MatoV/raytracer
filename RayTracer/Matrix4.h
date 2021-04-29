@@ -56,8 +56,8 @@ namespace mtr {
 			lhs *= rhs;
 			return lhs;
 		}
-		friend Vector operator*(Matrix4<T> lhs, const Vector rhs) {
-			Vector v{};
+		friend Vector<T> operator*(Matrix4<T> lhs, const Vector<T> rhs) {
+			Vector<T> v{};
 			for (auto i = 0; i < lhs.length; ++i) {
 				for (auto j = 0; j < lhs.length; ++j) {
 					//for (auto p = 0; p < lhs.length; ++p) {

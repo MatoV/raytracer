@@ -19,7 +19,7 @@ namespace mtr {
 		if (std::is_integral<T>::value)
 			return a == b;
 
-		if (std::signbit(a) != std::signbit(b))
+		if (std::signbit(double(a)) != std::signbit(double(b)))
 			return false;
 
 		int aInt = *(int*)&a;

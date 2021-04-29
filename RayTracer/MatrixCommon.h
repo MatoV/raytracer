@@ -40,8 +40,6 @@ namespace mtr {
 		return inversed;
 	}
 
-
-
 	/* Returns determinant of a given matrix */
 	template<typename T, template<typename C> class M>
 	requires (int_or_float<T> && matrix_len<M<T>>)

@@ -12,17 +12,17 @@ namespace mtr {
 
 	Canvas::Canvas(size_t width, size_t height) : width(width), height(height) {
 		pixels.resize(width*height);
-		std::ranges::fill(pixels, mtr::Vector(0, 0, 0));
+		std::ranges::fill(pixels, mtr::Vector<float>(0.f, 0.f, 0.f));
 	}
 
-	void Canvas::WritePixel(int x, int y, Color color) {
+	void Canvas::WritePixel(int x, int y, mtr::Vector<float> color) {
 		if (x >= width || x < 0 || y >= height || y < 0) {
 			throw std::domain_error("Index out of range.");
 		}
 		pixels[y*width + x] = color;
 	}
 
-	Vector& Canvas::PixelAt(int x, int y)  {
+	mtr::Vector<float>& Canvas::PixelAt(int x, int y)  {
 		if (x >= width || x < 0 || y >= height || y < 0) {
 			throw std::domain_error("Index out of range.");
 		}
@@ -44,7 +44,7 @@ namespace mtr {
 
 		for (auto i = 0; i < height; ++i) {
 			for (auto j = 0; j < width; ++j) {
-				Color  c = PixelAt(j, i);
+				mtr::Vector<float>  c = PixelAt(j, i);
 				std::string s{};
 				s.append(std::to_string(floatTo255RGB(c.x)));
 				s.append(" ");

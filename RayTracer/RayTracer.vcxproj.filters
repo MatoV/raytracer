@@ -42,7 +42,7 @@
     <ClInclude Include="MatrixCommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
+    <ClInclude Include="MatrixTransform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

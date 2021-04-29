@@ -7,7 +7,6 @@
 
 namespace mtr {
 
-	using Color = mtr::Vector;
 
 	class Canvas {
 	public:
@@ -27,10 +26,10 @@ namespace mtr {
 		/*	Writes color to a pixel on a given coordinate 
 		*	Colors are in RGB space (values between 0 and 1)
 		*/
-		void WritePixel(int x, int y, Color color = { 0,0,0 });
+		void WritePixel(int x, int y, mtr::Vector<float> color = { 0.f,0.f,0.f });
 
 		/* Returns a color of a pixel at x,y coordinates*/
-		Vector& PixelAt(int x, int y) ;
+		mtr::Vector<float>& PixelAt(int x, int y) ;
 
 		/* Saves canvas as an image (ppm format) */
 		bool SaveToFile();
@@ -45,7 +44,7 @@ namespace mtr {
 		size_t width, height;
 
 		/* Array of pixels */
-		std::vector<Color> pixels;
+		std::vector<mtr::Vector<float>> pixels;
 	};
 
 }
