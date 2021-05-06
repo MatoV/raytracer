@@ -13,65 +13,110 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{947b5218-210e-4bf5-af65-5a7417d27576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{ad2fe989-985b-439c-bfcb-e933860fff6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math\Matrix">
+      <UniqueIdentifier>{c07b6486-aa39-48d1-b6a9-8f9b4967d338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math\Vector">
+      <UniqueIdentifier>{a753428b-b472-4a97-a24b-3ed75fb6d69b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math\Ray">
+      <UniqueIdentifier>{5185c16f-1fb2-47e6-9977-93b08116858d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math\Intersection">
+      <UniqueIdentifier>{44234ab2-4419-4a00-90fe-04ef3b91f381}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Geometric.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Canvas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mtr.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="CMath.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix2.h">
+      <Filter>Header Files\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3.h">
+      <Filter>Header Files\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>Header Files\Math\Matrix</Filter>
     </ClInclude>
     <ClInclude Include="MatrixCommon.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math\Matrix</Filter>
     </ClInclude>
     <ClInclude Include="MatrixTransform.h">
+      <Filter>Header Files\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometric.h">
+      <Filter>Header Files\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Header Files\Math\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="RayCommon.h">
+      <Filter>Header Files\Math\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Header Files\Math\Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\Math\Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="Intersection.h">
+      <Filter>Header Files\Math\Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Geometric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Canvas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CMath.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Intersection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MatrixCommon.cpp">
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

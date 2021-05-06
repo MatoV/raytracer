@@ -3,7 +3,6 @@
 #include <concepts>
 #include <memory>
 #include <algorithm>
-#include <ranges>
 #include <stdexcept>
 #include "CMath.h"
 #include "Vector.h"

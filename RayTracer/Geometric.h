@@ -30,5 +30,10 @@ namespace mtr {
 		return nVec;
 	}
 
+	/* For the incident vector I and surface orientation N, returns the reflection direction */
+	template<int_or_float T = float>
+	Vector<T> Reflect(const Vector<T>& i, const Vector<T>& n) {
+		return i - 2.f * Dot(n, i) * n;
+	}
 
 }
