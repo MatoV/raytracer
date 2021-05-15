@@ -46,6 +46,7 @@ namespace mtr {
 					for (auto p = 0; p < rows; ++p) {
 						m(i, j) += (*this)(i, p) * rhs(p, j);
 					}
+					m(i, j) = IsZero(m(i, j)) ? T(0) : m(i, j);
 				}
 			}
 			(*this) = m;
@@ -64,6 +65,7 @@ namespace mtr {
 					//}
 					
 				}
+				v[i] = IsZero(v[i]) ? T(0) : v[i];
 			}
 			return v;
 		}

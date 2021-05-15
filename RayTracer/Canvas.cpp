@@ -10,7 +10,7 @@ namespace mtr {
 
 
 
-	Canvas::Canvas(size_t width, size_t height) : width(width), height(height) {
+	Canvas::Canvas(int width, int height) : width(width), height(height) {
 		pixels.resize(width*height);
 		std::ranges::fill(pixels, mtr::Vector<float>(0.f, 0.f, 0.f));
 	}
@@ -33,7 +33,7 @@ namespace mtr {
 
 		auto currPath{ std::filesystem::current_path() };
 		
-		std::ofstream file{ "raytraced.ppm" };
+		std::ofstream file{ "raytracedChapter7.ppm" };
 
 		// Adding a header
 		file << "P3\n" << width << " " << height << '\n' << "255\n";

@@ -1,4 +1,6 @@
 #pragma once
+#define _USE_MATH_DEFINES
+
 #include <concepts>
 #include <cmath>
 #include <type_traits>
@@ -19,6 +21,8 @@ namespace mtr {
 		if (std::is_integral<T>::value)
 			return a == b;
 
+		if (a == T(0) && b == T(0)) return true;
+
 		if (std::signbit(double(a)) != std::signbit(double(b)))
 			return false;
 
@@ -34,6 +38,11 @@ namespace mtr {
 		if (intDiff <= maxUlps)
 			return true;
 		return false;
+	}
+
+	template<int_or_float T>
+	bool IsZero(T value) {
+		return (abs(value) < 0.00001);
 	}
 
 

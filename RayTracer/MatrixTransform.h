@@ -13,7 +13,7 @@ namespace mtr {
 
 	template<int_or_float T = float>
 	Matrix4<T> Translate(const Vector<T>& v) {
-		Matrix4<T> m{ 1 };
+		Matrix4<T> m{ T(1) };
 
 		m(0, 3) = v.x;
 		m(1, 3) = v.y;
@@ -39,8 +39,10 @@ namespace mtr {
 
 		float cosVal = cos(angle);
 		float sinVal = sin(angle);
-		if (std::abs(cosVal) < 0.000001f) cosVal = 0.f;
-		if (std::abs(sinVal) < 0.000001f) sinVal = 0.f;
+		//if (std::abs(cosVal) < 0.000001f) cosVal = 0.f;
+		//if (std::abs(sinVal) < 0.000001f) sinVal = 0.f;
+		cosVal = IsZero(cosVal) ? 0.f : cosVal;
+		sinVal = IsZero(sinVal) ? 0.f : sinVal;
 		switch (axis) {
 			case Axis::X: 
 			{
@@ -80,5 +82,18 @@ namespace mtr {
 	Matrix4<T> ShearZ(T x, T y) {
 		T shear[16] = { 1,0,0,0,0,1,0,0,x,y,1,0,0,0,0,1 };
 		return Matrix4<T>{shear};
+	}
+
+	template<int_or_float T>
+	Matrix4<T> ViewTransform(const Vector<T>& from, const Vector<T>& to, const Vector<T>& up) {
+		auto upN = Normalize(up);
+		auto forward = Normalize(to - from);
+		auto left = Cross(forward, upN);
+		auto tUp = Cross(left, forward);
+
+		T elements[16] = {left.x, left.y, left.z, T(0), tUp.x, tUp.y, tUp.z, T(0), -forward.x, -forward.y, -forward.z, T(0),T(0), T(0), T(0) , T(1)};
+		auto orientation = Matrix4<T>{ elements };
+
+		return orientation * Translate(Vector{ -from.x, -from.y, -from.z });
 	}
 }

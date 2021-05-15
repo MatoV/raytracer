@@ -1,3 +1,4 @@
+#include "Vector.h"
 #include "Intersection.h"
 #include "Object.h"
 

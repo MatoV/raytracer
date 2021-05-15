@@ -11,13 +11,13 @@ namespace mtr {
 	class Canvas {
 	public:
 
-		explicit Canvas(size_t width, size_t height);
+		explicit Canvas(int width, int height);
 
 		/* Returns width of a canvas */
-		size_t GetWidth() { return width; }
+		int GetWidth() { return width; }
 
 		/* Returns height of a canvas */
-		size_t GetHeight() { return height; }
+		int GetHeight() { return height; }
 
 		/* Set new size of a canvas */
 		void SetSize(int width, int height) { this->width = width; this->height = height; }
@@ -41,7 +41,7 @@ namespace mtr {
 		int floatTo255RGB(float c);
 
 		/* Canvas width and height */
-		size_t width, height;
+		int width, height;
 
 		/* Array of pixels */
 		std::vector<mtr::Vector<float>> pixels;

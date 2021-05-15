@@ -2,17 +2,31 @@
 
 #include <algorithm>
 #include <vector>
-#include <iostream>
-
+#include "CMath.h"
 
 
 namespace mtr {
 
 	class Object;
 
+	template<int_or_float T>
+	class Vector;
+
+	/* Intersection data */
+	struct IData {
+		float t;
+		bool inside;
+		Object* object = nullptr;
+		Vector<float> point;
+		Vector<float> eye;
+		Vector<float> normal;
+
+	};
+
 	class Intersection {
 	public:
 		Intersection(float distance, Object* shape);
+		Intersection() = default;
 
 		bool operator==(const Intersection& rhs) const;
 		bool operator<(Intersection const& rhs) const;
