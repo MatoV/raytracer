@@ -118,7 +118,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>C:\ExternLibs\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\ExternLibs\Visual Leak Detector\include;$(SolutionDir)RayTracer\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,7 +136,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>C:\ExternLibs\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\ExternLibs\Visual Leak Detector\include;$(SolutionDir)RayTracer\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,40 +147,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Canvas.h" />
-    <ClInclude Include="CMath.h" />
-    <ClInclude Include="Geometric.h" />
-    <ClInclude Include="Intersection.h" />
-    <ClInclude Include="Light.h" />
-    <ClInclude Include="Material.h" />
-    <ClInclude Include="Matrix2.h" />
-    <ClInclude Include="Matrix3.h" />
-    <ClInclude Include="Matrix4.h" />
-    <ClInclude Include="MatrixCommon.h" />
-    <ClInclude Include="mtr.h" />
-    <ClInclude Include="MatrixTransform.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="PointLight.h" />
-    <ClInclude Include="Ray.h" />
-    <ClInclude Include="RayCommon.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="Sphere.h" />
-    <ClInclude Include="Vector.h" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\Core\Camera.cpp" />
+    <ClCompile Include="src\Core\Canvas.cpp" />
+    <ClCompile Include="src\Core\Intersection.cpp" />
+    <ClCompile Include="src\Core\Light\Light.cpp" />
+    <ClCompile Include="src\Core\Light\PointLight.cpp" />
+    <ClCompile Include="src\Core\Material\Material.cpp" />
+    <ClCompile Include="src\Core\Object\Object.cpp" />
+    <ClCompile Include="src\Core\Object\Sphere.cpp" />
+    <ClCompile Include="src\Core\Scene\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Canvas.cpp" />
-    <ClCompile Include="CMath.cpp" />
-    <ClCompile Include="Intersection.cpp" />
-    <ClCompile Include="Light.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Material.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="PointLight.cpp" />
-    <ClCompile Include="Ray.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Sphere.cpp" />
+    <ClInclude Include="include\Core\Camera.h" />
+    <ClInclude Include="include\Core\Canvas.h" />
+    <ClInclude Include="include\Core\Intersection.h" />
+    <ClInclude Include="include\Core\Light\Light.h" />
+    <ClInclude Include="include\Core\Light\PointLight.h" />
+    <ClInclude Include="include\Core\Material\Material.h" />
+    <ClInclude Include="include\Core\Object\Object.h" />
+    <ClInclude Include="include\Core\Object\Sphere.h" />
+    <ClInclude Include="include\Core\Ray\Ray.h" />
+    <ClInclude Include="include\Core\Ray\RayCommon.h" />
+    <ClInclude Include="include\Core\Scene\Scene.h" />
+    <ClInclude Include="include\Math\CMath.h" />
+    <ClInclude Include="include\Math\Geometric.h" />
+    <ClInclude Include="include\Math\Matrix\Matrix2.h" />
+    <ClInclude Include="include\Math\Matrix\Matrix3.h" />
+    <ClInclude Include="include\Math\Matrix\Matrix4.h" />
+    <ClInclude Include="include\Math\Matrix\MatrixCommon.h" />
+    <ClInclude Include="include\Math\Matrix\MatrixTransform.h" />
+    <ClInclude Include="include\Math\Vector\Vector.h" />
+    <ClInclude Include="include\mtr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

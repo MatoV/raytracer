@@ -1,21 +1,18 @@
-#define _USE_MATH_DEFINES
-
 #include <iostream>
 #include <iomanip>
 #include <map>
 #include <queue>
 #include "mtr.h"
-#include "Scene.h"
-#include "RayCommon.h"
-#include "Sphere.h"
-#include "PointLight.h"
-#include "Camera.h"
+#include "Core/Scene/Scene.h"
+#include "Core/Ray/RayCommon.h"
+#include "Core/Object/Sphere.h"
+#include "Core/Light/PointLight.h"
+#include "Core/Camera.h"
+
 //#include <vld.h>
 
 
 using namespace mtr;
-
-
 
 
 void DrawClock() {
@@ -40,12 +37,7 @@ void DrawSphere() {
 
 	Material m1{ Vector{0.2f,1.f,0.2f}, 0.1f, 0.9f, 0.9f, 200.f };
 	Object* s = new Sphere(m1);
-	//Object* s2 = new Sphere(m1);
 	Light* l = new PointLight(Vector{ -10.f, 10.f, -10.f, 1.f }, Vector{ 1.f,1.f, 1.f });
-	//Vector eye{ 0.f, float(M_SQRT2 / 2.f), -float(M_SQRT2 / 2.f) };
-	//Vector normal{ 0.f, 0.f, -1.f };
-	//Vector pos{ 0.f, 0.f, 0.f, 1.f };
-
 
 	int sizeX = 350;
 	int sizeY = 350;
@@ -81,7 +73,7 @@ void DrawSphere() {
 				auto point = Ray<float>::Position(r, hit.value);
 				auto normal = s->Normal(point);
 				auto eye = Normalize(-r.GetDirection());
-				auto c = Lightning(hit.object, l, point, eye, normal);
+				auto c = Lightning(hit.object, l, point, eye, normal, false);
 				canvas.WritePixel(i, j, c);
 			}
 			/*else if (hit2.object) {
@@ -105,10 +97,6 @@ void DrawSphere() {
 }
 void DrawScene() {
 	Scene scene{};
-
-	//Vector eye{ 0.f, float(M_SQRT2 / 2.f), -float(M_SQRT2 / 2.f) };
-	//Vector normal{ 0.f, 0.f, -1.f };
-	//Vector pos{ 0.f, 0.f, 0.f, 1.f };
 
 	int sizeX = 350;
 	int sizeY = 350;
@@ -162,7 +150,7 @@ void DrawScene() {
 
 }
 
-void DrawChapter7() {
+void DrawSceneC7() {
 
 	Material floorMat{};
 	floorMat.SetColor(Vector{ 1.f, 0.9f, 0.9f });
@@ -211,7 +199,7 @@ void DrawChapter7() {
 	scene.Add(std::move(wallLeft));
 	scene.Add(std::move(wallRight));
 
-	Camera cam{ 840, 420, M_PI / 3.f };
+	Camera cam{ 1024, 512, M_PI / 3.f };
 	cam.SetTransform(ViewTransform(Point(0.f, 1.5f, -7.f), Point(0.f, 1.f, 0.f), Vector{ 0.f, 1.f, 0.f }));
 
 	auto canvas = cam.Render(scene);
@@ -222,18 +210,9 @@ void DrawChapter7() {
 int main() {
 	
 
-	DrawChapter7();
+	DrawSceneC7();
 
-	//for (auto i = 0; i < t.length; ++i) {
-	//	for (auto j = 0; j < t.length; ++j) {
-	//		std::cout << t(i, j) << ' ';
-	//	}
-	//	std::cout << '\n';
-	//}
 
-	//std::for_each(xs.begin(), xs.end(), [](Intersection& i) {
-	//	std::cout << i.value << '\n';
-	//});
 	return 0;
 		
 
