@@ -9,7 +9,6 @@
 #include "Core/Light/PointLight.h"
 #include "Core/Camera.h"
 
-//#include <vld.h>
 
 
 using namespace mtr;
